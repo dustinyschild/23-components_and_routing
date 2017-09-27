@@ -3,6 +3,7 @@ require('./style/main.scss');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import NoteCreateForm from './components/createNoteForm';
+import NoteList from './components/noteList';
 
 class App extends React.Component {
   constructor(props){
@@ -28,7 +29,7 @@ class App extends React.Component {
     return (
       <div>
         <NoteCreateForm App={this.getApp()}/>
-
+        <NoteList App={this.getApp()}/>
       </div>
     )
   }
