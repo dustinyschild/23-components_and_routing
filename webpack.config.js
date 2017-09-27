@@ -33,7 +33,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Reddit Board Search',
+      title: 'Notes',
       minify: {
         collapseWhitespace: false
       },
