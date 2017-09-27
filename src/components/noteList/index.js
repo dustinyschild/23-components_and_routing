@@ -15,7 +15,7 @@ class NoteList extends React.Component {
     return(
       <div>
         <ul>
-          {this.props.App.state.notes ?
+          {this.props.App.state.notes.length !== 0 ?
             this.props.App.state.notes.map(note => {
             return (
               <NoteItem note={note} key={note.id}/>
