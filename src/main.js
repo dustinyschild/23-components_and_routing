@@ -10,11 +10,13 @@ class App extends React.Component {
 
     this.state ={
       notes: [],
+      noteContent: '',
     }
 
     this.app = {
       state: this.state,
-      setState: this.setState.bind(this)
+      setState: this.setState.bind(this),
+      content: this.state.noteContent,
     }
   }
 
