@@ -6,10 +6,16 @@ class NoteItem extends React.Component {
     super(props);
   }
 
+  componentDidUpdate(){
+    console.log('Update Item State',this.props.App.state);
+  }
+
   render(){
     return(
       <li key={this.props.note.id}>
         {this.props.note.content}
+
+        <button>Delete</button>
       </li>
     )
   }
