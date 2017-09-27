@@ -20,15 +20,12 @@ class NoteCreateForm extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    console.log(event.target.children[0].value);
-
     let newNote = new Note({
       content: event.target.children[0].value
-    })
-    console.log(newNote);
+    });
     this.props.App.setState(state => {
       return ({notes: [...state.notes, newNote]})
-    })
+    });
   }
 
   render(){

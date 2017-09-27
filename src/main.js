@@ -18,10 +18,15 @@ class App extends React.Component {
     }
   }
 
+  componentDidUpdate(){
+    console.log(this.state.notes);
+  }
+
   render(){
     return (
       <div>
         <NoteCreateForm App={this.app}/>
+
       </div>
     )
   }
