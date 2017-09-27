@@ -11,8 +11,10 @@ class App extends React.Component {
     this.state ={
       notes: [],
     }
+  }
 
-    this.app = {
+  getApp(){
+    return {
       state: this.state,
       setState: this.setState.bind(this),
     }
@@ -25,7 +27,7 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <NoteCreateForm App={this.app}/>
+        <NoteCreateForm App={this.getApp()}/>
 
       </div>
     )
