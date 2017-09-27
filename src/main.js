@@ -2,8 +2,9 @@ require('./style/main.scss');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NoteCreateForm from './components/createNoteForm';
+import NoteItem from './components/noteItem';
 import NoteList from './components/noteList';
+import NoteCreateForm from './components/createNoteForm';
 
 class App extends React.Component {
   constructor(props){

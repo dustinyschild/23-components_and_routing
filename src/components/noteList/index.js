@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import NoteItem from '../noteItem';
 
 class NoteList extends React.Component {
   constructor(props){
@@ -16,9 +17,9 @@ class NoteList extends React.Component {
         <ul>
           {this.props.App.state.notes ?
             this.props.App.state.notes.map(note => {
-            return (<li key={note.id}>
-              {note.content}
-            </li>)
+            return (
+              <NoteItem note={note} key={note.id}/>
+          )
           }) :
           <li>No Notes Yet!</li>
 
