@@ -16,6 +16,10 @@ class NoteUpdateForm extends React.Component {
           //Cancel button:
             //onClick do NOT update note & return to default view
         }
+        <input
+          type="text"
+        />
+
       </div>
     );
   }
