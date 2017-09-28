@@ -11,7 +11,9 @@ class NoteItem extends React.Component {
     return(
       <li key={this.props.note.id}>
         {this.props.note.content}
-        <button onClick={() => {this.props.removeNote(this.props.note)}}>Delete</button>
+        <button onClick={() => {this.props.removeNote(this.props.note)}}>
+          Delete
+        </button>
       </li>
     )
   }

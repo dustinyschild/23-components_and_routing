@@ -1,5 +1,11 @@
 import React from 'react';
 import NoteItem from '../noteItem';
+import Modal from '../modals/noNotes.modal';
+import PropTypes from 'prop-types';
+
+NoteList.propTypes = {
+  App: PropTypes.array,
+};
 
 class NoteList extends React.Component {
   constructor(props){
@@ -7,12 +13,13 @@ class NoteList extends React.Component {
     this.removeNote = this.removeNote.bind(this);
   }
 
+
   removeNote(note){
     this.props.App.setState(state => {
       return ({
-        notes: this.props.App.state.notes.filter(stateNote => {
+        notes: state.notes.filter(stateNote => {
           return stateNote.id !== note.id;
-        });
+        })
       });
     });
   }
@@ -23,7 +30,7 @@ class NoteList extends React.Component {
         <ul>
           {this.props.App.state.notes.length !== 0 ?
             this.props.App.state.notes.map(note => (<NoteItem note={note} key={note.id} removeNote={this.removeNote}/>)) :
-            <p>No Notes Yet!</p>
+            <Modal />
           }
         </ul>
       </div>
