@@ -3,16 +3,11 @@ import NoteItem from '../noteItem';
 import Modal from '../modals/noNotes.modal';
 import PropTypes from 'prop-types';
 
-NoteList.propTypes = {
-  App: PropTypes.array,
-};
-
 class NoteList extends React.Component {
   constructor(props){
     super(props);
     this.removeNote = this.removeNote.bind(this);
   }
-
 
   removeNote(note){
     this.props.App.setState(state => {
@@ -37,5 +32,9 @@ class NoteList extends React.Component {
     );
   }
 }
+
+NoteList.propTypes = {
+  App: PropTypes.object,
+};
 
 export default NoteList;

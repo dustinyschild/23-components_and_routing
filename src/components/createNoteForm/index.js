@@ -33,7 +33,7 @@ class NoteCreateForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <input
         value={this.noteContent}
-        type="text"
+        type="textfield"
         onChange={this.handleChange}
         />
       </form>
