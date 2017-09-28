@@ -1,5 +1,5 @@
 require('./style/main.scss');
-
+//new branch ya'll
 import React from 'react';
 import ReactDOM from 'react-dom';
 import NoteList from './components/noteList';
