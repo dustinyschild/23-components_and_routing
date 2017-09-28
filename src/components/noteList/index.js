@@ -1,18 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import NoteItem from '../noteItem';
 
 class NoteList extends React.Component {
   constructor(props){
     super(props);
-    this.getApp = this.getApp.bind(this);
+    this.removeNote = this.removeNote.bind(this);
   }
 
-  getApp(){
-    return {
-      state: this.props.App.state,
-      setState: this.props.App.setState,
-    }
+  removeNote(note){
+    this.props.App.setState(state => {
+      return ({
+        notes: this.props.App.state.notes.filter(stateNote => {
+          return stateNote.id !== note.id;
+        });
+      });
+    });
   }
 
   render(){
@@ -20,17 +22,12 @@ class NoteList extends React.Component {
       <div>
         <ul>
           {this.props.App.state.notes.length !== 0 ?
-            this.props.App.state.notes.map(note => {
-            return (
-              <NoteItem note={note} key={note.id} App={this.getApp()}/>
-          )
-          }) :
-          <li>No Notes Yet!</li>
-
-        }
+            this.props.App.state.notes.map(note => (<NoteItem note={note} key={note.id} removeNote={this.removeNote}/>)) :
+            <p>No Notes Yet!</p>
+          }
         </ul>
       </div>
-    )
+    );
   }
 }
 

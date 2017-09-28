@@ -9,17 +9,22 @@
     "es6": true,
     "node": true,
     "mocha": true,
-    "jasmine": true
+    "jasmine": true,
+    "browser": true
   },
-
+  "plugins": [
+    "react"
+  ],
   "parserOptions":{
+    "sourceType": "module",
     "ecmaVersion": 2017,
     "ecmaFeatures": {
       "modules": true,
       "experimentalObjectRestSpread": true,
-      "impliedStrict": true
+      "impliedStrict": true,
+      "jsx": true
     }
   },
 
-  "extends": "eslint:recommended"
+  "extends": ["eslint:recommended","plugin: react/racommended"]
 }

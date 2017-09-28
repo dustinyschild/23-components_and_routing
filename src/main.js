@@ -2,7 +2,6 @@ require('./style/main.scss');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NoteItem from './components/noteItem';
 import NoteList from './components/noteList';
 import NoteCreateForm from './components/createNoteForm';
 
@@ -12,14 +11,14 @@ class App extends React.Component {
 
     this.state ={
       notes: [],
-    }
+    };
   }
 
   getApp(){
     return {
       state: this.state,
       setState: this.setState.bind(this),
-    }
+    };
   }
 
   componentDidUpdate(){
@@ -32,8 +31,8 @@ class App extends React.Component {
         <NoteCreateForm App={this.getApp()}/>
         <NoteList App={this.getApp()}/>
       </div>
-    )
+    );
   }
 }
 
-ReactDOM.render(<App/>,document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
