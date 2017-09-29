@@ -12,17 +12,29 @@ class App extends React.Component {
     this.state ={
       notes: [],
     };
+    this.getApp = this.getApp.bind(this);
+    this.editNote = this.editNote.bind(this);
   }
 
   getApp(){
     return {
       state: this.state,
       setState: this.setState.bind(this),
+      editNote: this.editNote.bind(this),
     };
   }
 
+  editNote(updatedNote){
+    console.log(updatedNote);
+    this.setState(() => {
+      this.state.notes.map(stateNote => {
+        stateNote.id === updatedNote.id ? updatedNote : stateNote;
+      });
+    });
+  }
+
   componentDidUpdate(){
-    console.log(this.state.notes);
+    console.log(this.state);
   }
 
   render(){

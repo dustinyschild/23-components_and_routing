@@ -9,13 +9,13 @@ class NoteCreateForm extends React.Component {
     console.log(props);
     this.state = {
       noteContent: ''
-    }
+    };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event){
-    console.log('change');
     this.setState({noteContent: event.target.value});
   }
 
@@ -25,7 +25,7 @@ class NoteCreateForm extends React.Component {
       content: event.target.children[0].value
     });
     this.props.App.setState(state => {
-      return ({notes: [...state.notes, newNote]})
+      return ({notes: [...state.notes, newNote]});
     });
   }
 
