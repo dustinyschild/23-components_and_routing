@@ -1,6 +1,7 @@
 const Note = require('./note.constructor');
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 class NoteCreateForm extends React.Component {
   constructor(props){
@@ -8,13 +9,13 @@ class NoteCreateForm extends React.Component {
     console.log(props);
     this.state = {
       noteContent: ''
-    }
+    };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event){
-    console.log('change');
     this.setState({noteContent: event.target.value});
   }
 
@@ -24,7 +25,7 @@ class NoteCreateForm extends React.Component {
       content: event.target.children[0].value
     });
     this.props.App.setState(state => {
-      return ({notes: [...state.notes, newNote]})
+      return ({notes: [...state.notes, newNote]});
     });
   }
 
@@ -32,13 +33,18 @@ class NoteCreateForm extends React.Component {
     return(
       <form onSubmit={this.handleSubmit}>
         <input
-        value={this.noteContent}
-        type="text"
-        onChange={this.handleChange}
+          value={this.noteContent}
+          type="text"
+          size="20"
+          onChange={this.handleChange}
         />
       </form>
-    )
+    );
   }
 }
+
+NoteCreateForm.propTypes = {
+  App: PropTypes.object,
+};
 
 export default NoteCreateForm;
